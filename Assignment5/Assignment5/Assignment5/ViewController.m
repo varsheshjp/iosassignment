@@ -53,6 +53,10 @@
     ex=[ex stringByAppendingString:@")"];
     CountryName.text=ex;
     CountryMoney.text=[country objectForKey:@"currencyCode"];
+    NSInteger separatorHeight = 1;
+    UIView * additionalSeparator = [[UIView alloc] initWithFrame:CGRectMake(16,cell.frame.size.height-separatorHeight,cell.frame.size.width,separatorHeight)];
+    additionalSeparator.backgroundColor = [UIColor grayColor];
+    [cell addSubview:additionalSeparator];
     return cell;
 }
 
