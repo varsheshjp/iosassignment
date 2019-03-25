@@ -9,9 +9,11 @@
 #import <Foundation/Foundation.h>
 #import "ListViewController.h"
 #import <CoreData/CoreData.h>
+#import "ProfileViewController.h"
 @interface ListViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong) NSMutableArray *listofemployee;
+@property (strong) NSManagedObject *employee;
 @end
 
 @implementation ListViewController
@@ -49,7 +51,20 @@
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.listofemployee.count;
 }
-
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    self.employee=[self.listofemployee objectAtIndex:indexPath.row];
+    [self performSegueWithIdentifier:@"ShowDetail" sender:self];
+}
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // Make sure your segue name in storyboard is the same as this line
+    if ([[segue identifier] isEqualToString:@"ShowDetail"])
+    {
+        ProfileViewController *controller = (ProfileViewController *)segue.destinationViewController;
+        controller.employee =self.employee;
+    }
+}
 - (NSManagedObjectContext *)managedObjectContext {
     AppDelegate *appdelegate= (AppDelegate *)[[UIApplication sharedApplication] delegate];
     return appdelegate.managedObjectContext;

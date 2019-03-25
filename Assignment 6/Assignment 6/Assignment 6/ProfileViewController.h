@@ -7,9 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
 #import "AppDelegate.h"
 @interface ProfileViewController : UIViewController
-
-
+@property (strong) NSManagedObject *employee;
 @end

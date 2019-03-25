@@ -281,16 +281,16 @@
                         <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="0Xi-hS-XCL"/>
                     </view>
-                    <navigationItem key="navigationItem" id="RsA-Qk-5bT"/>
                     <connections>
                         <outlet property="tableView" destination="uS8-UC-N9d" id="ebi-Qb-4t5"/>
+                        <segue destination="2UK-JX-a4k" kind="show" identifier="ShowDetail" id="M2N-54-SsH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mkc-OZ-40J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1256.8" y="116.49175412293854"/>
         </scene>
-        <!--Profile View Controller-->
+        <!-- -->
         <scene sceneID="rCM-fz-gXd">
             <objects>
                 <viewController id="2UK-JX-a4k" customClass="ProfileViewController" sceneMemberID="viewController">
@@ -334,6 +334,7 @@
                                 </state>
                                 <connections>
                                     <action selector="onGenderClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Unf-1r-Xsx"/>
+                                    <action selector="onGenderClick:" destination="2UK-JX-a4k" eventType="touchUpInside" id="rIt-Tf-dHU"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bkH-TU-bm0">
@@ -386,6 +387,7 @@
                                 </state>
                                 <connections>
                                     <action selector="onGenderClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4Ld-3b-O31"/>
+                                    <action selector="onGenderClick:" destination="2UK-JX-a4k" eventType="touchUpInside" id="dAS-Ey-O1t"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OrR-Bc-6h1">
@@ -395,11 +397,24 @@
                                 <state key="normal" title="Update">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="updateClick:" destination="2UK-JX-a4k" eventType="touchUpInside" id="WgI-SG-Ga1"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="v3P-eG-Rt2"/>
                     </view>
+                    <navigationItem key="navigationItem" title=" " id="RsA-Qk-5bT"/>
+                    <connections>
+                        <outlet property="Address" destination="WeO-lp-EFS" id="NS3-JR-KS3"/>
+                        <outlet property="Female" destination="JzF-NT-BtQ" id="h5G-UT-Tx1"/>
+                        <outlet property="Male" destination="UhP-PT-Zfx" id="Fov-B4-3jC"/>
+                        <outlet property="Update" destination="OrR-Bc-6h1" id="rWK-Nr-jrG"/>
+                        <outlet property="eid" destination="2VV-V8-4km" id="Zc3-l9-4Pc"/>
+                        <outlet property="name" destination="CV8-1M-F1e" id="CbD-J4-rmf"/>
+                        <outlet property="position" destination="cxk-o7-k0x" id="49b-qz-M9x"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oql-bd-GLK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -428,6 +443,6 @@
         <image name="user" width="225" height="225"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="BLs-19-TTj"/>
+        <segue reference="3hw-Jw-gDa"/>
     </inferredMetricsTieBreakers>
 </document>
